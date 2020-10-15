@@ -1,14 +1,5 @@
 <!DOCTYPE html>
-<!--
-    WELCOME TO THE STRIVE TEAM GENERATOR!
-    The app is pretty straight forward, use Bootstrap to add the following features:
-    - The user can add a list of names
-    - The user can set the number of teams
-    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
-    - Each team should be inside a "column"
-    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
-    - [EXTRA] Create a button to reset the state of the app
--->
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -25,9 +16,87 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+    The app is pretty straight forward, use Bootstrap to add the following features:
+    - The user can add a list of names
+    - The user can set the number of teams
+    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
+    - Each team should be inside a "column"
+    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
+    - [EXTRA] Create a button to reset the state of the app
+-->
+
+    <div class="container mt-3">
+      <h1 class="display-4">Team Generator</h1>
+      <!-- row user input -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control user-value"
+              placeholder="Insert a name"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+              >
+                Add User
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- row per selezione numeri gruppi -->
+      <div class="row">
+        <div class="col">
+          <div class="input-group mb-3">
+            <select class="custom-select" id="inputGroupSelect02">
+              <option selected>
+                Choose How Many Groups You Want to Create
+              </option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <div class="input-group-append">
+              <label class="input-group-text" for="inputGroupSelect02"
+                >Options</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-end">
+          <button type="button" class="btn btn-secondary" id="fire-btn">
+            Create Groups
+          </button>
+        </div>
+      </div>
+      <!-- row per la ul -->
+      <div class="row">
+        <div class="col col-ul"></div>
+      </div>
+      <!-- row gruppi -->
+      <div class="row">
+        <div class="col g-1"></div>
+        <div class="col g-2"></div>
+        <div class="col g-3"></div>
+        <div class="col g-4"></div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
+    <script src="app.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
